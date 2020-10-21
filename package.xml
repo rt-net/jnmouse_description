@@ -20,5 +20,6 @@
   <depend>robot_state_publisher</depend>
   <depend>rviz</depend>
   <depend>urdf</depend>
+  <depend>xacro</depend>
 
 </package>
