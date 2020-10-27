@@ -5,6 +5,8 @@
        xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
        xmlns:xacro="http://ros.org/wiki/xacro">
 
+  <xacro:arg name="camera_namespace" default="stereo_camera" />
+
   <xacro:include filename="$(find jnmouse_description)/urdf/common.xacro" />
   <xacro:include filename="$(find jnmouse_description)/urdf/body/body.urdf.xacro" />
   <xacro:include filename="$(find jnmouse_description)/urdf/wheel/wheel.urdf.xacro" />
@@ -59,8 +61,12 @@
   <xacro:lightsensor_gazebo prefix="lf" base_rad="0" rad_range="0.3" min_range="0.01" max_range="0.6" robot_namespace="raspimouse_on_gazebo" />
 
   <!-- Cameras -->
-  <xacro:camera_gazebo camera_name="right" camera_link="right_camera_link" robot_namespace="stereo_camera" />
-  <xacro:camera_gazebo camera_name="left" camera_link="left_camera_link" robot_namespace="stereo_camera" />
+  <xacro:camera_gazebo camera_name="right" camera_link="right_camera_link"
+    robot_namespace="$(arg camera_namespace)"
+    robotdescription_namespace="/" />
+  <xacro:camera_gazebo camera_name="left" camera_link="left_camera_link"
+    robot_namespace="$(arg camera_namespace)"
+    robotdescription_namespace="/" />
 
   <!-- DiffDriveController -->
   <gazebo>

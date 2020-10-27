@@ -1,16 +1,17 @@
 <?xml version="1.0"?>
 <robot name="csi_camera" xmlns:xacro="http://ros.org/wiki/xacro">
 
-  <xacro:macro name="camera_gazebo" params="camera_name camera_link robot_namespace">
+  <xacro:macro name="camera_gazebo" params="camera_name camera_link robot_namespace robotdescription_namespace">
 
     <link name="${camera_link}_tf_origin" />
+
     <joint name="${camera_link}_tf_joint" type="fixed">
       <origin xyz="0 0 0" rpy="0 -1.57 -1.57" />
       <parent link="${camera_link}" />
       <child link="${camera_link}_tf_origin" />
     </joint>
-    <gazebo reference="${camera_link}_tf_origin">
 
+    <gazebo reference="${camera_link}_tf_origin">
       <sensor type="camera" name="${camera_name}">
         <visualize>true</visualize>
         <update_rate>30.0</update_rate>
@@ -40,7 +41,7 @@
           <cameraName>${camera_name}</cameraName>
           <imageTopicName>image_raw</imageTopicName>
           <cameraInfoTopicName>camera_info</cameraInfoTopicName>
-          <frameName>${camera_link}_tf_origin</frameName>
+          <frameName>${robotdescription_namespace}${camera_link}_tf_origin</frameName>
           <hackBaseline>0.0</hackBaseline>
           <distortionK1>0.0</distortionK1>
           <distortionK2>0.0</distortionK2>
