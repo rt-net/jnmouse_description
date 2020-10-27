@@ -82,7 +82,7 @@
       <publishWheelTF>false</publishWheelTF>
       <publishOdomTF>false</publishOdomTF>
       <wheelAcceleration>0</wheelAcceleration>
-      <wheelTorque>5</wheelTorque>
+      <wheelTorque>500</wheelTorque>
       <odometrySource>world</odometrySource>
       <publishTf>1</publishTf>
     </plugin>
