@@ -40,7 +40,7 @@
         <wheelAcceleration>0</wheelAcceleration>
 
         <!-- Set to true to publish /odom (nav_msgs::Odometry), defaults to true -->
-        <publishTF>$(arg tf)</publishTF>
+        <publishTf>$(arg tf)</publishTf>
         <!-- Set to true to publish transforms for the wheel links, defaults to false -->
         <publishWheelTF>$(arg tf)</publishWheelTF>
         <!-- Set to true to publish transforms for the odometry, defaults to true -->
